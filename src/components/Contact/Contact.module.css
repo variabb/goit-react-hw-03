@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+.wrapper:last-child {
+  margin-bottom: 0px;
+}
+.button {
+  height: 25px;
+  width: 70px;
+  align-self: center;
+}
