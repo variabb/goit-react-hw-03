@@ -2,7 +2,7 @@
 
 import Contact from "../Contact/Contact";
 
-function ContactList({ contacts, setContacts }) {
+function ContactList({ contacts, handleDeleteContact }) {
   return (
     <div>
       {contacts.map((contact) => {
@@ -10,7 +10,8 @@ function ContactList({ contacts, setContacts }) {
           <Contact
             contact={contact}
             key={contact.id}
-            setContacts={setContacts}
+           
+            handleDeleteContact={handleDeleteContact}
           />
         );
       })}

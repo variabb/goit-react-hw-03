@@ -27,7 +27,9 @@ function App() {
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
- 
+   const handleDeleteContact = (id) => {
+     setContacts((prev) => prev.filter((contact) => contact.id !== id));
+   };
  
   const filteredContacts = contacts.filter((contact) => {
     return (
@@ -49,7 +51,10 @@ function App() {
         setInputValue={setInputValue}
         handleChange={handleChange}
       />
-      <ContactList contacts={filteredContacts} setContacts={setContacts} />
+      <ContactList
+        contacts={filteredContacts}
+        handleDeleteContact={handleDeleteContact}
+      />
     </div>
   );
 }

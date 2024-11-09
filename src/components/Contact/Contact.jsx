@@ -1,10 +1,7 @@
 import s from "./Contact.module.css";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
-function Contact({ contact, setContacts }) {
-  const handleDeleteContact = () => {
-    setContacts((prev) => prev.filter((item) => item.id !== contact.id));
-  };
+function Contact({ contact, handleDeleteContact }) {
   return (
     <div className={s.wrapper}>
       <div>
@@ -15,7 +12,10 @@ function Contact({ contact, setContacts }) {
           <FaPhoneAlt /> {contact.number}
         </p>
       </div>
-      <button className={s.button} onClick={handleDeleteContact}>
+      <button
+        className={s.button}
+        onClick={() => handleDeleteContact(contact.id)}
+      >
         Delete
       </button>
     </div>
