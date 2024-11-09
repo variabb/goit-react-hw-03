@@ -17,9 +17,7 @@ function App() {
          { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
        ];
  });
-  //  const handleDeleteContact = (id) => {
-  //    setContacts((prev) => prev.filter((item) => item.id !== id));
-  //  };
+
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
@@ -39,21 +37,20 @@ function App() {
   });
 
   return (
-    <>
+    <div>
       <h1>Phonebook</h1>
       <ContactForm
         setContacts={setContacts}
         inputValue={inputValue}
-       
-        contacts = {contacts}
+        contacts={contacts}
       />
       <SearchBox
         inputValue={inputValue}
         setInputValue={setInputValue}
         handleChange={handleChange}
       />
-      <ContactList contacts={filteredContacts} />
-    </>
+      <ContactList contacts={filteredContacts} setContacts={setContacts} />
+    </div>
   );
 }
 
